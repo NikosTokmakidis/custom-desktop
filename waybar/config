@@ -1,0 +1,76 @@
+{
+	"layer":"bottom",
+	"position":"top",
+	
+	"height":50,
+	"spacing":6,	
+
+	"modules-left": [
+		"custom/appmenu",
+		"hyprland/workspaces"
+	],
+
+	"modules-right": [
+		"tray",
+		"pulseaudio",
+		"network",
+		"clock"
+	],
+	
+	"modules-center": [
+		"hyprland/window"
+	],
+
+	"custom/appmenu": {
+		"format": "Menu",
+		"rotate":0,
+		"on-click":"~/.config/waybar/scripts/launch_menu.sh"
+	},
+	
+	"network": {
+		"interface": "wlo1",
+		"format-connected": "{ssid} ({signalStrength}%)",
+		"format-disconnected": "No Wi-Fi",
+		"tooltip": "IP: {ip}\nGateway: {gateway}\nSignal: {signalStrength}%"
+	},
+	
+	"clock": {
+		"format":"{:%a, %d. %b  %H:%M}",
+		"rotate":0,
+		"tooltip-format": "<span>{calendar}</span>",
+		"calendar": {
+            		"mode": "month",
+            		"format": {
+                		"months": "<span color='#ff6699'><b>{}</b></span>",
+                        	"days": "<span color='#cdd6f4'><b>{}</b></span>",
+                	    	"weekdays": "<span color='#7CD37C'><b>{}</b></span>",
+                	    	"today": "<span color='#ffcc66'><b>{}</b></span>"
+            		}	
+
+		}
+	},
+	
+	"hyprland/workspaces": {
+		"format": "{icon}",
+		"format-icons": {
+			"default": "",
+			"active": "",
+			"urgent": ""
+    		}
+	},
+	
+	"pulseaudio": {
+  		"format": "{icon} {volume}%",
+  		"format-muted": " Muted",
+  		"format-icons": {
+    			"default": ["\uf026  ", "\uf027  ", "\uf028  "]
+  		},
+  		"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+  		"on-click-right": "pavucontrol"
+	},
+	
+	"tray": {
+		"icon-size":20,
+		"spacing":10
+	}
+}
