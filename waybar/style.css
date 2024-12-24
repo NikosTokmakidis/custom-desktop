@@ -4,13 +4,10 @@
   font-family: "JetBrainsMono";
   font-size: 16px;
   border-color: rgba(0, 0, 0, 0);
-  border-radius: 10px;
-  
+  border-radius: 10px; 
 }
 
 .module {
-  margin-left: 5px;
-  margin-right: 5px;
   margin-top: 5px;
   background-color: rgba(0, 0, 0, 0.4);
   padding-left: 15px;
@@ -24,3 +21,18 @@
   padding-right:5px;
 }
 
+#custom-appmenu {
+  margin-left: 5px
+}
+
+#clock {
+  margin-right: 5px
+}
+
+#modules-left {
+  color: red
+}
+
+#workspaces button:hover {
+  background-color: green;
+}
